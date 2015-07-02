@@ -3,3 +3,29 @@ body {
   background-size: cover;
   text-align: center;
 }
+body h1 {
+  font-size: 4em;
+}
+body h2 {
+  font-size: 3em;
+}
+body .bubbles {
+  width: auto;
+  height: 150px;
+  margin: 20px;
+  margin-left: 30px;
+  background-color: white;
+  opacity: 0.4;
+  border-radius: 20px;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  float: middle;
+}
+body .bubbles .info {
+  color: #81A594;
+  opacity: 1;
+  font-family: "Monaco";
+  font-size: 2em;
+  padding-top: 50px;
+}
