@@ -9,6 +9,15 @@ body h1 {
 body h2 {
   font-size: 3em;
 }
+body .icon {
+  text-align: right;
+}
+body .temp {
+  text-align: left;
+  font-size: 3em;
+  font-weight: bold;
+  color: #E6E6DC;
+}
 body .bubbles {
   width: auto;
   height: 150px;
@@ -19,8 +28,6 @@ body .bubbles {
   border-radius: 20px;
   text-align: center;
   vertical-align: middle;
-  display: inline-block;
-  float: middle;
 }
 body .bubbles .info {
   color: #81A594;
@@ -28,4 +35,13 @@ body .bubbles .info {
   font-family: "Monaco";
   font-size: 2em;
   padding-top: 50px;
+}
+body .bubbles #loc {
+  float: right;
+}
+body .bubbles #desc {
+  float: left;
+}
+body .bubbles #wind {
+  float: right;
 }
