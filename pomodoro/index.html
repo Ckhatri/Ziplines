@@ -31,12 +31,11 @@
 
   <div class="row" ng-controller = "pomodoroController as pomodoro">
     <div class="row">
-        <button class="btn btn-primary" ng-click = "pomodoro.countdown()">start</button>
-        <button class="btn btn-primary">reset</button>
-        <button class="btn btn-primary">stop</button>
+        <h4>Click on the Time to Start/Stop!</h2>
+        <button class="btn btn-primary" ng-click = 'reset()'>reset</button>
     </div>
-    <h2 class = "timer">
-    {{timerRunning}}
+    <h2 ng-click = 'toggleTimer()' class = "timer">
+    {{name}}
     {{timeLeft}}
     </h2>
   </div>
