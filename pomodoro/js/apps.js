@@ -21,7 +21,7 @@
 			//if it's not running, turn it on, then update the time.
 			else {
 				$scope.timerRunning = true;
-				$scope.currentPromise = $interval(updateTimer, 100);
+				$scope.currentPromise = $interval(updateTimer, 1000);
 			}
 		};
 
