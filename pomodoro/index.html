@@ -25,18 +25,20 @@
     <![endif]-->
   </head>
   <body>
-  <div class="row">
+  <div class="row center-block">
     <h1>Pomodoro Timer!</h1>
   </div>
 
-  <div class="row" ng-controller = "pomodoroController as pomodoro">
+  <div class="row center-block" ng-controller = "pomodoroController as pomodoro">
     <div class="row">
-        <h4>Click on the Time to Start/Stop!</h2>
+        <h4>Click Anywhere on the circle to start!</h2>
         <button class="btn btn-primary" ng-click = 'reset()'>reset</button>
     </div>
     <h2 ng-click = 'toggleTimer()' class = "timer">
-    {{name}}<br/>
-    {{timeLeft}}
+    <div class = "circle center-block vcenter">
+      {{name}}
+      {{timeLeft}}
+    </div>
     </h2>
   </div>
 
