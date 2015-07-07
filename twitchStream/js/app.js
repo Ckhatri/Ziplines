@@ -10,7 +10,7 @@ app.controller('streamerCtrl', function($scope, $http){
 
 	streamers.forEach(function(stream) {
 		var streamerInfo = {};
-		$http.get("https://api.twitch.tv/kraken/streams/"+ stream).success(function(data) {
+		$.getJSON("https://api.twitch.tv/kraken/streams/"+ stream + "/?callback=?").success(function(data) {
 			var isOn = "online";
 			if (data.stream === null){
 				isOn = "offline";
@@ -20,7 +20,7 @@ app.controller('streamerCtrl', function($scope, $http){
 			streamerInfo.link = streamLink;
 
 
-			$http.get("https://api.twitch.tv/kraken/users/"+ stream).success(function(data) {
+			$.getJSON("https://api.twitch.tv/kraken/users/"+ stream + "/?callback=?").success(function(data) {
 				var name = data.display_name;
 				var icon = data.logo;
 				streamerInfo.displayName = name;
@@ -32,6 +32,7 @@ app.controller('streamerCtrl', function($scope, $http){
 				else {
 					$scope.offlineUsers.push(streamerInfo);
 				}
+				$scope.$apply();
 			});
 
 		});
@@ -45,13 +46,11 @@ app.controller('streamerCtrl', function($scope, $http){
 
 	$("#online").on('click', function() {
 		$scope.profile = $scope.onlineUsers;
-		console.log($scope.onlineUsers);
 		$scope.$apply();
 	});
 
 	$("#offline").on('click', function() {
 		$scope.profile = $scope.offlineUsers;
-		console.log($scope.offlineUsers);
 		$scope.$apply();
 	});
 
