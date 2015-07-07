@@ -4,7 +4,7 @@ body {
 }
 body main {
   margin: 0 auto;
-  height: 300px;
+  height: auto;
   width: 300px;
   border: 1px solid #466362;
   background-color: white;
@@ -31,9 +31,6 @@ body main header li {
 body main #people {
   padding-left: 0px;
 }
-body main #people a {
-  text-decoration: none;
-}
 body main #people li {
   text-align: left;
   list-style-type: none;
@@ -54,11 +51,12 @@ body main #people .name {
   text-align: left;
   color: #466362;
   font-size: 1.2em;
+  text-decoration: none;
 }
 body main #people .status {
-  right: 20px;
   line-height: 50px;
-  text-align: right;
+  text-align: justify;
   color: #466362;
   font-size: 1.2em;
+  padding-right: 10px;
 }

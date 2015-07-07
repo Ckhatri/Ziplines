@@ -10,7 +10,7 @@ body {
 
 	main {
 		margin: 0 auto;
-		height: 300px;
+		height: auto;
 		width: 300px;
 		border: 1px solid @sage;
 		background-color: white;
@@ -39,9 +39,6 @@ body {
 
 		#people {
 			padding-left: 0px;
-			a {
-				text-decoration: none;
-			}
 			li {
 				text-align: left;
 				list-style-type: none;
@@ -63,13 +60,14 @@ body {
 				text-align: left;
 				color: @sage;
 				font-size: 1.2em;
+				text-decoration: none;
 			}
 			.status {
-				right: 20px;
 				line-height: 50px;
-				text-align: right;
+				text-align: justify;
 				color: @sage;
 				font-size: 1.2em;
+				padding-right: 10px;
 			}
 		}
 	}

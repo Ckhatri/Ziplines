@@ -38,7 +38,7 @@
       </div>
 
       <ul id = "people" ng-repeat="person in profile">
-        <li><img src={{person.pic}} alt="http://placehold.it/50x50"/> <span class = "name">{{person.displayName}}</span> <span class = "status">{{person.online}}</span></li>
+        <li><img src={{person.pic}} alt="http://placehold.it/50x50"/> <a class="name" href="{{person.link}}> <span class = "name">{{person.displayName}}</span></a><span class = "status pull-right">{{person.online}}</span></li>
       </ul>
     </main>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
