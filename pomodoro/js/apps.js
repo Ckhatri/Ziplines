@@ -25,7 +25,7 @@
 			//if it's not running, turn it on, then update the time.
 			else {
 				$scope.timerRunning = true;
-				$scope.currentPromise = $interval(updateTimer, 100);
+				$scope.currentPromise = $interval(updateTimer, 1000);
 				$scope.currColor = greenColor;
 			}
 		};
@@ -67,31 +67,6 @@
 				}
 			}
 		}
-		// $scope.toggleTimer = function() {
-		// 	//if it is running
-		// 	if (!$scope.timerRunning){
-		// 		$scope.timerRunning = true;
-		// 		updateTimer();
-		// 		$interval(updateTimer, 100);
-		// 	}
-		// 	else {
-		// 		$scope.timerRunning = false;
-		// 	}
-		// };
-
-		// function updateTimer() {
-		// 	if ($scope.timeLeft <= 0){
-		// 		$scope.timerRunning = false;
-		// 		$scope.
-		// 	}
-		// 	else if ($scope.timerRunning) {
-		// 		$scope.timeLeft--;
-		// 	}
-		// }
-
-		// function stopTimer() {
-		// 	$scope.timerRunning = false;
-		// }
 
 	});
 })();
