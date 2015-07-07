@@ -14,7 +14,7 @@ $( document ).ready(function() {
 			$('.author').text(authorName);
 		},
 		error: function(response) {
-			alert('fuck');
+			alert('error! Issue with ajax call');
 		}
 	});
 	});
