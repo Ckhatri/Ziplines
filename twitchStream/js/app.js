@@ -6,7 +6,7 @@ app.controller('streamerCtrl', function($scope, $http){
 	$scope.offlineUsers = [];
 	$scope.profile = $scope.allUsers;
 
-	var streamers = ["tsm_dyrus", "tsm_theoddone", "clgdoublelift"];
+	var streamers = ["tsm_dyrus", "tsm_theoddone", "clgdoublelift", "trumpsc"];
 
 	streamers.forEach(function(stream) {
 		var streamerInfo = {};
