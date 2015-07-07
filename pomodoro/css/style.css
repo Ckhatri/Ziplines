@@ -25,3 +25,10 @@ body .circle {
   vertical-align: middle;
   line-height: 300px;
 }
+body .bottom {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 30px;
+  width: 100%;
+}
