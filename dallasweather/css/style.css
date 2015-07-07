@@ -29,7 +29,6 @@ body .bubbles {
   border-radius: 20px;
   text-align: center;
   vertical-align: middle;
-  min-width: 200px;
 }
 body .bubbles .info {
   color: #81A594;
