@@ -3,6 +3,9 @@ body {
   text-align: center;
   font-size: 3em;
 }
+body div {
+  margin-bottom: 40px;
+}
 body h1 {
   color: #EDBFC6;
 }
