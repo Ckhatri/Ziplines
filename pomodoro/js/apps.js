@@ -8,6 +8,9 @@
 		$scope.timeLeft = $scope.sessionLength;
 		$scope.onBreak = false;
 		$scope.currentPromise = true;
+		$scope.currColor = greenColor;
+		var redColor = "red";
+		var greenColor = "#99CC00";
 
 
 		$scope.toggleTimer = function() {
@@ -16,12 +19,14 @@
 			$interval.cancel($scope.currentPromise);
 			if ($scope.timerRunning){
 				$scope.timerRunning = false;
+				$scope.currColor = redColor;
 			}
 
 			//if it's not running, turn it on, then update the time.
 			else {
 				$scope.timerRunning = true;
-				$scope.currentPromise = $interval(updateTimer, 1000);
+				$scope.currentPromise = $interval(updateTimer, 100);
+				$scope.currColor = greenColor;
 			}
 		};
 
@@ -32,6 +37,7 @@
 			$scope.onBreak = false;
 			$interval.cancel($scope.currentPromise);
 			$scope.name = "Session";
+			$scope.currColor = greenColor;
 		};
 
 
@@ -50,7 +56,6 @@
 					playAudio();
 					$scope.timerRunning = false;
 					$scope.onBreak = !$scope.onBreak;
-					console.log("ON BREAK?" + $scope.onBreak);
 					if ($scope.onBreak){
 						$scope.timeLeft = $scope.breakLength;
 						$scope.name = "Break";
