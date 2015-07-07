@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="TwitchStream">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +23,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body ng-controller="streamerCtrl as streamer">
     <main>
       <header>
         <ul class = "menu">
@@ -37,10 +37,8 @@
         <input type="text" class="form-control" placeholder="Search for a user here">
       </div>
 
-      <ul id = "people">
-        <li><img src="http://placehold.it/50x50" alt="http://placehold.it/50x50"/> <span class = "name">User</span> <span class = "status"> Online</span></li>
-        <li><img src="http://placehold.it/50x50" alt="http://placehold.it/50x50" /> <span class = "name">User</span> <span class = "status"> Online</span></li>
-        <li><img src="http://placehold.it/50x50" alt="http://placehold.it/50x50"/> <span class = "name">User</span> <span class = "status"> Online</span></li>
+      <ul id = "people" ng-repeat="person in profile">
+        <li><img src={{person.pic}} alt="http://placehold.it/50x50"/> <span class = "name">{{person.displayName}}</span> <span class = "status">{{person.online}}</span></li>
       </ul>
     </main>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -49,5 +47,6 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
