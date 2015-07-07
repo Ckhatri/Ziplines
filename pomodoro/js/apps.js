@@ -21,7 +21,7 @@
 			//if it's not running, turn it on, then update the time.
 			else {
 				$scope.timerRunning = true;
-				$scope.currentPromise = $interval(updateTimer, 1000);
+				$scope.currentPromise = $interval(updateTimer, 100);
 			}
 		};
 
@@ -35,12 +35,19 @@
 		};
 
 
+		function playAudio() {
+			var wav = 'http://www.oringz.com/oringz-uploads/sounds-917-communication-channel.mp3';
+			var audio = new Audio(wav);
+			audio.play();
+		}
+
 		function updateTimer() {
 			//if its running, reduce the time by one second
 			if ($scope.timerRunning){
 				$scope.timeLeft--;
 				//if the time gets below or equal to zero, turn it off, switch break break and sesssion as applicable
 				if ($scope.timeLeft <= 0){
+					playAudio();
 					$scope.timerRunning = false;
 					$scope.onBreak = !$scope.onBreak;
 					console.log("ON BREAK?" + $scope.onBreak);
