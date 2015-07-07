@@ -31,6 +31,9 @@ body main header li {
   padding-bottom: 15px;
   border-right: 1px solid #c5d5e4;
 }
+body main header li:hover {
+  cursor: pointer;
+}
 body main #people {
   padding-left: 0px;
 }
