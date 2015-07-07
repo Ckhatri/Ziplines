@@ -27,18 +27,18 @@
     <main>
       <header>
         <ul class = "menu">
-          <li class="active">All</li>
-          <li>Online</li>
-          <li>Offline</li>
+          <li id = "all">All</li>
+          <li id = "online">Online</li>
+          <li id = "offline">Offline</li>
         </ul>
       </header>
 
-      <div class="searchMenu">
-        <input type="text" class="form-control" placeholder="Search for a user here">
-      </div>
+<!--       <div class="searchMenu">
+        <input type="text" class="form-control" placeholder="Search for a streamer here">
+      </div> -->
 
       <ul id = "people" ng-repeat="person in profile">
-        <li><img src={{person.pic}} alt="http://placehold.it/50x50"/> <a class="name" href="{{person.link}}> <span class = "name">{{person.displayName}}</span></a><span class = "status pull-right">{{person.online}}</span></li>
+        <li><img ng-src="{{person.pic}}" alt="http://placehold.it/50x50"/> <a class="name" href="{{person.link}}"> <span class = "name">{{person.displayName}}</span></a><span class = "status pull-right">{{person.online}}</span></li>
       </ul>
     </main>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

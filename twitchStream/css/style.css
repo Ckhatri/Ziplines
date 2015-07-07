@@ -47,16 +47,15 @@ body main #people img {
 }
 body main #people .name {
   line-height: 50px;
-  padding-left: 10px;
   text-align: left;
   color: #466362;
-  font-size: 1.2em;
+  font-size: 1.1em;
   text-decoration: none;
 }
 body main #people .status {
   line-height: 50px;
   text-align: justify;
   color: #466362;
-  font-size: 1.2em;
+  font-size: 1.1em;
   padding-right: 10px;
 }
