@@ -34,6 +34,9 @@ body main header li {
 body main header li:hover {
   cursor: pointer;
 }
+body main header .active {
+  color: #938581;
+}
 body main #people {
   padding-left: 0px;
 }

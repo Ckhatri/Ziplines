@@ -41,16 +41,22 @@ app.controller('streamerCtrl', function($scope, $http){
 
 	$("#all").on('click', function() {
 		$scope.profile = $scope.allUsers;
+		$(this).addClass('active');
+		$(this).siblings().removeClass('active');
 		$scope.$apply();
 	});
 
 	$("#online").on('click', function() {
 		$scope.profile = $scope.onlineUsers;
+		$(this).addClass('active');
+		$(this).siblings().removeClass('active');
 		$scope.$apply();
 	});
 
 	$("#offline").on('click', function() {
 		$scope.profile = $scope.offlineUsers;
+		$(this).addClass('active');
+		$(this).siblings().removeClass('active');
 		$scope.$apply();
 	});
 
