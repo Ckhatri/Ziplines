@@ -47,6 +47,18 @@
 			audio.play();
 		}
 
+		$scope.changeTime = function() {
+			console.log("HELLO");
+			if ($scope.onBreak) {
+				$scope.breakLength = $scope.breakLength + 1;
+			}
+			else {
+				$scope.sessionLength = $scope.sessionLength + 1;
+			}
+			$scope.timeLeft = $scope.timeLeft + 1;
+
+		};
+
 		function updateTimer() {
 			//if its running, reduce the time by one second
 			if ($scope.timerRunning){

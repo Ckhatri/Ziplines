@@ -32,7 +32,9 @@
   <div class="row center-block" ng-controller = "pomodoroController as pomodoro">
     <div class="row">
         <h4>Click Anywhere on the circle to start!</h2>
-        <button class="btn btn-primary" ng-click = 'reset()'>reset</button>
+        <h2 class = "timeAdjust" ng-click = "changeTime()"> + </h2>
+        <button class="btn-large btn-primary" ng-click = 'reset()'>reset</button>
+        <h2 class="timeAdjust" ng-click="changeTime()"> - </h2>
     </div>
     <h2 ng-click = 'toggleTimer()' class = "timer">
     <div class = "circle center-block vcenter" style="border-color: {{currColor}}">
