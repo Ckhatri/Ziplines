@@ -1,7 +1,7 @@
 (function () {
 	var app = angular.module('pomodoro', []);
 	app.controller('pomodoroController', function($scope, $interval){
-		$scope.sessionLength = 25;
+		$scope.sessionLength = 5;
 		$scope.breakLength = 5;
 		$scope.name = "Session";
 		$scope.timerRunning = false;
@@ -19,15 +19,15 @@
 			$interval.cancel($scope.currentPromise);
 			if ($scope.timerRunning){
 				$scope.timerRunning = false;
-				$scope.currColor = redColor;
 			}
 
 			//if it's not running, turn it on, then update the time.
 			else {
 				$scope.timerRunning = true;
 				$scope.currentPromise = $interval(updateTimer, 1000);
-				$scope.currColor = greenColor;
 			}
+
+			updateColor();
 		};
 
 		$scope.reset = function() {
@@ -40,6 +40,14 @@
 			$scope.currColor = greenColor;
 		};
 
+		function updateColor() {
+			if ($scope.timerRunning){
+				$scope.currColor = greenColor;
+			}
+			else {
+				$scope.currColor = redColor;
+			}
+		}
 
 		function playAudio() {
 			var wav = 'http://www.oringz.com/oringz-uploads/sounds-917-communication-channel.mp3';
@@ -47,15 +55,31 @@
 			audio.play();
 		}
 
-		$scope.changeTime = function() {
-			console.log("HELLO");
-			if ($scope.onBreak) {
-				$scope.breakLength = $scope.breakLength + 1;
+
+		$scope.changeTime = function(boolVal) {
+			if ($scope.timeLeft <= 0){
+				alert("Sorry you can't make the time go below one");
 			}
 			else {
-				$scope.sessionLength = $scope.sessionLength + 1;
+			if (boolVal) {
+				if ($scope.onBreak) {
+					$scope.breakLength += 1;
+				}
+				else {
+					$scope.sessionLength += 1;
+				}
+				$scope.timeLeft = $scope.timeLeft + 1;
 			}
-			$scope.timeLeft = $scope.timeLeft + 1;
+			else {
+				if ($scope.onBreak) {
+					$scope.breakLength -= 1;
+				}
+				else {
+					$scope.sessionLength -= 1;
+				}
+				$scope.timeLeft = $scope.timeLeft - 1;
+			}
+			}
 
 		};
 
@@ -68,6 +92,7 @@
 					playAudio();
 					$scope.timerRunning = false;
 					$scope.onBreak = !$scope.onBreak;
+					updateColor();
 					if ($scope.onBreak){
 						$scope.timeLeft = $scope.breakLength;
 						$scope.name = "Break";
